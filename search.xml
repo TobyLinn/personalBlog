@@ -20,7 +20,7 @@
   </entry>
   <entry>
     <title>DOM</title>
-    <url>/blog/2023/10/26/DOM/</url>
+    <url>/blog/2023/10/26/%E5%89%8D%E7%AB%AF/3.DOM/DOM/</url>
     <content><![CDATA[<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><blockquote>
 <p>Document Object Model (DOM) 中文名为文档对象模型,它是一个编程的接口(API),允许我们在文档创建、修改、删除、查找元素;我们还可以获取元素并绑定事件,使页面更加的动态;</p>
 </blockquote>
