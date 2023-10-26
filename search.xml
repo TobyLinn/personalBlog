@@ -18,4 +18,178 @@
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>DOM</title>
+    <url>/blog/2023/10/26/DOM/</url>
+    <content><![CDATA[<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><blockquote>
+<p>Document Object Model (DOM) 中文名为文档对象模型,它是一个编程的接口(API),允许我们在文档创建、修改、删除、查找元素;我们还可以获取元素并绑定事件,使页面更加的动态;</p>
+</blockquote>
+<blockquote>
+<p>DOM 将 HTML 文档视为节点树,每一个节点代表一个 html 元素;DOM 节点分为元素节点、文本节点、属性节点</p>
+</blockquote>
+<h3 id="查找节点"><a href="#查找节点" class="headerlink" title="查找节点"></a>查找节点</h3><ul>
+<li><p>getElement 系列</p>
+<blockquote>
+<p>返回一个或多个节点集合, HTMLCollection 对象(动态 nodeList 对象)</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. getElementById</span><br><span class="line">根据节点 id 属性去查找元素(出现多个相同 id ,则返回查找第一个的元素节点)</span><br><span class="line"></span><br><span class="line">2. getElementsByClassName</span><br><span class="line">根据节点 class 属性去查找元素,返回节点集合(可以出现多个 html 节点)</span><br><span class="line"></span><br><span class="line">3.getElementsByTagName</span><br><span class="line">根据标签名去查找元素,返回节点集合</span><br><span class="line"></span><br><span class="line">4.getElementsByName</span><br><span class="line">根据标签属性名去查找元素,返回 nodeList 集合(可以使用 forEach)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>querySelector 系列</p>
+<blockquote>
+<p>返回一个或多个节点集合, nodeList 对象(静态 nodeList 对象),支持 css3 选择器</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1.querySelector(选择器)</span><br><span class="line">返回匹配的第一个元素</span><br><span class="line"></span><br><span class="line">2.querySelectorAll(选择器)</span><br><span class="line">返回匹配的所有元素(节点集合,类数组)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查找父节点</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">parentNode 返回当前元素的父节点(文本/元素)</span><br><span class="line"></span><br><span class="line">parentElement 返回当前元素的父元素节点</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>previousElementSibling 查找前一个同级(兄弟)元素</p>
+</li>
+<li><p>previousSibling 查找前一个同级(兄弟)节点(包含文本节点&#x2F;元素节点)</p>
+</li>
+<li><p>nextElementSibling 查找后一个同级(兄弟)元素</p>
+</li>
+<li><p>nextSibling 查找后一个同级(兄弟)节点(包含文本节点&#x2F;元素节点)</p>
+</li>
+<li><p>查找子节点</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">childNodes 返回包含文本节点的集合( nodeList 对象)</span><br><span class="line"></span><br><span class="line">children 返回元素节点集合( HTMLCollection 对象)</span><br><span class="line"></span><br><span class="line">firstChild 返回第一个子节点(包含文本节点)</span><br><span class="line"></span><br><span class="line">firstElementChild 返回第一个子元素</span><br><span class="line"></span><br><span class="line">lastChild 返回最后一个子节点(包含文本节点)</span><br><span class="line"></span><br><span class="line">lastElementChild 返回最后一个子元素</span><br></pre></td></tr></table></figure>
+
+<h3 id="操作类名-动态切换类名"><a href="#操作类名-动态切换类名" class="headerlink" title="操作类名(动态切换类名)"></a>操作类名(动态切换类名)</h3><ul>
+<li><p>className</p>
+<blockquote>
+<p>可读取或重置元素 class 属性</p>
+</blockquote>
+</li>
+<li><p>classList</p>
+<blockquote>
+<p>返回元素类名列表(DOMTokenList 对象),classList 的属性只是可读,如果要操作这个对象,必须使用 classList 的内置方法</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">node.classList.add(&#x27;xx&#x27;,&#x27;xx&#x27;,&#x27;xx&#x27;,...)</span><br><span class="line">在元素中添加一个或多个类名</span><br><span class="line"></span><br><span class="line">node.classList.remove(&#x27;xxxx&#x27;)</span><br><span class="line">在元素中添加一个或多个类名</span><br><span class="line"></span><br><span class="line">node.classList.toggle(切换的类名,true || false)</span><br><span class="line">在元素中切换一个或多个类名</span><br><span class="line">true 只有不存在类名的时候才会添加</span><br><span class="line">false 只有存在类名的时候才会移除</span><br><span class="line">不填布尔值: 强制添加类名和强制移除类名</span><br><span class="line"></span><br><span class="line">node.classList.contains(类名)</span><br><span class="line">返回布尔值,指定类名是否存在</span><br></pre></td></tr></table></figure>
+
+<h3 id="属性节点"><a href="#属性节点" class="headerlink" title="属性节点"></a>属性节点</h3><ul>
+<li><p>setAttribute(属性名,属性值) 设置元素属性(返回字符串)</p>
+</li>
+<li><p>getAttribute(属性名) 获取元素属性(返回数字)</p>
+</li>
+<li><p>removeAttribute(属性名) 删除元素属性</p>
+</li>
+</ul>
+<h3 id="添加节点"><a href="#添加节点" class="headerlink" title="添加节点"></a>添加节点</h3><ul>
+<li><p>createElement(元素名称) 创建元素节点</p>
+</li>
+<li><p>appendChild(元素)</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">功能:</span><br><span class="line">  将一个节点添加到指定父元素的末尾处.如果被添加的节点已经存在,会将原来存在的元素位置移动到新的位置上</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>append(元素)</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">功能:</span><br><span class="line">  将一个节点添加到指定父元素的末尾处(可以添加字符串/数字等)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>createTextNode(文本内容) 创建文本节点</p>
+</li>
+<li><p>insertBefore(插入的新节点, 指定的元素之前插入)</p>
+</li>
+<li><p>replaceChild(替换新节点, 需要被替换的旧节点)</p>
+</li>
+<li><p>cloneNode(布尔值) 默认值:flase</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">功能:</span><br><span class="line">  克隆节点,参数接收一个布尔值, true 深克隆(当前元素的所有层级都克隆), false 只会克隆当前元素(默认值)</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><ul>
+<li><p>remove() 删除自身</p>
+</li>
+<li><p>removeChild(子节点) 删除子节点</p>
+</li>
+</ul>
+<h3 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h3><ul>
+<li><p>innerHTML 设置或获取位于元素开始和结束标签内的 html</p>
+</li>
+<li><p>outerHTML 设置或获取位于元素以及元素开始和结束标签内容的 <code>html</code> 形式(当前元素+元素内容)</p>
+</li>
+<li><p>innerText 设置或获取位于元素开始和结束标签内的<code>文本</code>(元素文本内容,不包含元素&#x2F;注释节点)</p>
+</li>
+<li><p>outerText 设置或获取位于元素以及元素开始和结束标签内容的 <code>文本</code> 形式 (当前元素 + 元素内文本内容, 不包含元素 &#x2F; 注释节点)</p>
+</li>
+</ul>
+<p><img src="/blog/./img/image.png" alt="Alt text"></p>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><blockquote>
+<p>事件是 js 和 DOM 的交互桥梁(对事件做出反应),事件通常是和函数结合使用,通过用户操作行为(点击&#x2F;手指触摸&#x2F;鼠标)事件来驱动函数的执行(回调函数)</p>
+</blockquote>
+<h3 id="js-事件等级"><a href="#js-事件等级" class="headerlink" title="js 事件等级"></a>js 事件等级</h3><ul>
+<li>DOM 0 级事件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">优点:具有极好的跨浏览器优势,会以最快的速度去绑定事件</span><br><span class="line"></span><br><span class="line">写法:</span><br><span class="line">元素.on事件名 = 函数</span><br><span class="line"></span><br><span class="line">绑定方式:</span><br><span class="line">1. html 标签内绑定</span><br><span class="line">&lt;div onclick = &#x27;函数&#x27;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">2. 在 script 标签内绑定</span><br><span class="line">div.onclick = function()&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DOM 1 级事件</li>
+</ul>
+<blockquote>
+<p>1 级 DOM 标准(无提出相关的事件内容)</p>
+</blockquote>
+<ul>
+<li>DOM 2 级事件</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">特点:</span><br><span class="line">addEventListener 使用除了 IE 以外的浏览器, IE 使用 attachEvent 绑定事件;同个元素在同一个事件上可以用不同的处理函数</span><br><span class="line"></span><br><span class="line">写法:</span><br><span class="line">元素.addEventListener(事件类型,函数,事件流执行阶段)</span><br><span class="line"></span><br><span class="line">addEventListener 名为事件监听器,主要功能往事件目标注册一个事件监听器,接收回调执行函数</span><br><span class="line"></span><br><span class="line">事件流执行阶段 接收一个布尔值,默认是 false ,表示冒泡阶段触发; true 表示捕获阶段触发</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>DOM 3 级事件</li>
+</ul>
+<blockquote>
+<p>推出更多的事件类型,例如:blur、focus、keydown、keyup、dblclick、scroll、load、mouseenter、mouseout、touch、drag、change、input</p>
+</blockquote>
+<h3 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h3><blockquote>
+<p>事件流表述的页面接收事件的触发顺序,页面触发一个事件,会按照一定的顺序来响应事件,事件的响应过程就是事件流(过程)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">事件流三大阶段</span><br><span class="line">1. 冒泡阶段 (IE提出)</span><br><span class="line">事件冒泡,事件开始时由最具体的元素接收,然后逐级向上传播</span><br><span class="line"></span><br><span class="line">2. 目标阶段</span><br><span class="line">触发事件的对象( event target )</span><br><span class="line"></span><br><span class="line">3. 捕获阶段 (网景提出)</span><br><span class="line">事件捕获,事件开始时由最具体的元素接收,从最外层html元素往里捕获</span><br></pre></td></tr></table></figure>
+
+<h4 id="阻止冒泡-传播"><a href="#阻止冒泡-传播" class="headerlink" title="阻止冒泡(传播)"></a>阻止冒泡(传播)</h4><ul>
+<li><p>event.stopPropagation()</p>
+</li>
+<li><p>window.event.cancelBubble &#x3D; true (IE 取消泡泡)</p>
+</li>
+</ul>
+<h4 id="组织默认行为"><a href="#组织默认行为" class="headerlink" title="组织默认行为"></a>组织默认行为</h4><blockquote>
+<p>例如:表单提交、a 链接跳转等，如果想要控制，必须要阻止默认行为(自带行为)</p>
+</blockquote>
+<ul>
+<li><p>event.preventDefault()</p>
+</li>
+<li><p>window.event.returnValue &#x3D; false (IE)</p>
+</li>
+</ul>
+<h3 id="事件代理-事件委托"><a href="#事件代理-事件委托" class="headerlink" title="事件代理(事件委托)"></a>事件代理(事件委托)</h3><blockquote>
+<p>事件代理的实现原理就是利用了冒泡阶段和目标阶段,把处理的事件添加到父元素上,等待子元素的事件冒泡,并且可以要通过父元素 event.target 判断具体的子元素,从而做出代理</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">优点:</span><br><span class="line">1. 大量节约内存的占用,减少事件的注册</span><br><span class="line">2. 可以实现新增子节点的时候,无需再次注册事件,对动态内容操作尤为合适</span><br><span class="line"></span><br><span class="line">缺点:</span><br><span class="line">1. 会自动触发事件冒泡</span><br><span class="line">2. 缺失下标,需要手动添加下标自定义属性</span><br></pre></td></tr></table></figure>
+
+<h3 id="拖拽事件-drag"><a href="#拖拽事件-drag" class="headerlink" title="拖拽事件 drag"></a>拖拽事件 drag</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. dragstart 拖动开始时触发</span><br><span class="line"></span><br><span class="line">2. drag 拖动时触发</span><br><span class="line"></span><br><span class="line">3. dragend 拖动结束时触发</span><br><span class="line"></span><br><span class="line">4. dragover 进入目标区域就会触发（是否进入区域取决于鼠标位置）</span><br><span class="line"></span><br><span class="line">5. dragleave 拖动元素没有放下就离开目的区域的时候触发（是否进入区域取决于鼠标位置）</span><br><span class="line"></span><br><span class="line">6. dragenter 进入目标区域所占屏幕空间触发（是否进入区域取决于鼠标位置）</span><br><span class="line"></span><br><span class="line">7. drop 选择文本或内容放置到有效的目标内触发（是否进入区域取决于鼠标位置）</span><br><span class="line"></span><br><span class="line">`dragover` 和 `dragenter` 默认行为是不接受放置拖动元素，必须要阻止事件的默认行为 (浏览器不允许)</span><br><span class="line"></span><br><span class="line">拖动元素到达目标元素的顺序</span><br><span class="line">dragstart - drag - dragenter -dragover - dragleave - dragend</span><br></pre></td></tr></table></figure>
+
+<h3 id="移动端-touch"><a href="#移动端-touch" class="headerlink" title="移动端 touch"></a>移动端 touch</h3><h4 id="移动事件的类型"><a href="#移动事件的类型" class="headerlink" title="移动事件的类型"></a>移动事件的类型</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. touchstart 开始触摸屏幕</span><br><span class="line">2. touchmove 触摸屏幕开始拖动手指(一直触发)</span><br><span class="line">3. touchend 触摸屏幕后移开屏幕</span><br><span class="line">4. touchcancel 触摸被取消(系统取消),例如电话打断/关机(游戏存档/草稿能力/表单保存提示)</span><br></pre></td></tr></table></figure>
+
+<h4 id="touch-事件对象属性"><a href="#touch-事件对象属性" class="headerlink" title="touch 事件对象属性"></a>touch 事件对象属性</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. touches 屏幕上所有的触摸点</span><br><span class="line">2. pageX pageY 相对页面的左上角X轴/Y轴坐标</span><br><span class="line">3. clientX clientY 相对可视窗口的左上角X轴/Y轴坐标</span><br><span class="line">4. screenX screenY 相对屏幕的左上角X轴/Y轴坐标</span><br><span class="line">5. target 触发事件的目标元素</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>DOM</category>
+      </categories>
+      <tags>
+        <tag>DOM</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
 </search>
