@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>html</title>
+    <url>/post/undefined.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>DOM</title>
-    <url>/blog/posts/f75e92e9/</url>
+    <url>/post/undefined.html</url>
     <content><![CDATA[<h2 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h2><blockquote>
 <p>Document Object Model (DOM) 中文名为文档对象模型,它是一个编程的接口(API),允许我们在文档创建、修改、删除、查找元素;我们还可以获取元素并绑定事件,使页面更加的动态;</p>
 </blockquote>
@@ -111,7 +116,7 @@
 <li><p>outerText 设置或获取位于元素以及元素开始和结束标签内容的 <code>文本</code> 形式 (当前元素 + 元素内文本内容, 不包含元素 &#x2F; 注释节点)</p>
 </li>
 </ul>
-<p><img src="/blog/./img/image.png" alt="Alt text"></p>
+<p><img src="/./img/image.png" alt="Alt text"></p>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><blockquote>
 <p>事件是 js 和 DOM 的交互桥梁(对事件做出反应),事件通常是和函数结合使用,通过用户操作行为(点击&#x2F;手指触摸&#x2F;鼠标)事件来驱动函数的执行(回调函数)</p>
 </blockquote>
@@ -169,18 +174,17 @@
 <h4 id="touch-事件对象属性"><a href="#touch-事件对象属性" class="headerlink" title="touch 事件对象属性"></a>touch 事件对象属性</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. touches 屏幕上所有的触摸点</span><br><span class="line">2. pageX pageY 相对页面的左上角X轴/Y轴坐标</span><br><span class="line">3. clientX clientY 相对可视窗口的左上角X轴/Y轴坐标</span><br><span class="line">4. screenX screenY 相对屏幕的左上角X轴/Y轴坐标</span><br><span class="line">5. target 触发事件的目标元素</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端</category>
-        <category>3.DOM</category>
+        <category>DOM</category>
       </categories>
       <tags>
+        <tag>前端</tag>
         <tag>DOM</tag>
-        <tag>javascript</tag>
-        <tag>浏览器</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
     <title>BOM</title>
-    <url>/blog/posts/undefined/</url>
+    <url>/post/undefined.html</url>
     <content><![CDATA[<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><blockquote>
 <p>浏览器对象模型 Browser Object Model, 流浪其对象模型提供独立的 API,可以和浏览器窗口进行交互,BOM 由多个对象组成,其中 window 对象就是 BOM 的顶层对象,其余的对象都是 window 的子对象</p>
 </blockquote>
@@ -271,9 +275,9 @@
         <category>BOM</category>
       </categories>
       <tags>
+        <tag>BOM</tag>
         <tag>javascript</tag>
         <tag>浏览器</tag>
-        <tag>BOM</tag>
       </tags>
   </entry>
 </search>
