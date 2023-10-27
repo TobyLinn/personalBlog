@@ -169,12 +169,12 @@
 <h4 id="touch-事件对象属性"><a href="#touch-事件对象属性" class="headerlink" title="touch 事件对象属性"></a>touch 事件对象属性</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">1. touches 屏幕上所有的触摸点</span><br><span class="line">2. pageX pageY 相对页面的左上角X轴/Y轴坐标</span><br><span class="line">3. clientX clientY 相对可视窗口的左上角X轴/Y轴坐标</span><br><span class="line">4. screenX screenY 相对屏幕的左上角X轴/Y轴坐标</span><br><span class="line">5. target 触发事件的目标元素</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>前端</category>
-        <category>3.DOM</category>
+        <category>DOM</category>
       </categories>
       <tags>
         <tag>DOM</tag>
-        <tag>JavaScript</tag>
+        <tag>javascript</tag>
+        <tag>浏览器</tag>
       </tags>
   </entry>
   <entry>
@@ -270,9 +270,9 @@
         <category>BOM</category>
       </categories>
       <tags>
-        <tag>BOM</tag>
         <tag>javascript</tag>
         <tag>浏览器</tag>
+        <tag>BOM</tag>
       </tags>
   </entry>
 </search>
