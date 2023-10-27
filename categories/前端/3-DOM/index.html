@@ -23,14 +23,14 @@
   <meta name="description" content="無限進步!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Toby&#39;s Blog">
-<meta property="og:url" content="https://lincantao.gitee.io/blog/categories/DOM/index.html">
+<meta property="og:url" content="https://lincantao.gitee.io/blog/categories/%E5%89%8D%E7%AB%AF/3-DOM/index.html">
 <meta property="og:site_name" content="Toby&#39;s Blog">
 <meta property="og:description" content="無限進步!">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Toby Lin">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://lincantao.gitee.io/blog/categories/DOM/">
+<link rel="canonical" href="https://lincantao.gitee.io/blog/categories/%E5%89%8D%E7%AB%AF/3-DOM/">
 
 
 <script id="page-configurations">
@@ -43,7 +43,7 @@
   };
 </script>
 
-  <title>分类: DOM | Toby's Blog</title>
+  <title>分类: 3.DOM | Toby's Blog</title>
   
 
 
@@ -193,7 +193,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h2 class="collection-header">DOM
+        <h2 class="collection-header">3.DOM
           <small>分类</small>
         </h2>
       </div>
@@ -303,7 +303,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -408,6 +408,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : true,
+      notify     : true,
+      appId      : 'b6yWQxOcWjn63mc2llmva0je-gzGzoHsz',
+      appKey     : 'TqKIR6UsxUaRogOeNUx8Gksk',
+      placeholder: "欢迎留言评论交流...",
+      avatar     : 'robohash',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
