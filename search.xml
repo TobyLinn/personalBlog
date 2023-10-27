@@ -10,9 +10,103 @@
       </categories>
   </entry>
   <entry>
-    <title>[object Object]</title>
-    <url>/blog/posts/2185937872/</url>
-    <content><![CDATA[]]></content>
+    <title>BOM</title>
+    <url>/blog/posts/4090752603/</url>
+    <content><![CDATA[<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><blockquote>
+<p>浏览器对象模型 Browser Object Model, 流浪其对象模型提供独立的 API,可以和浏览器窗口进行交互,BOM 由多个对象组成,其中 window 对象就是 BOM 的顶层对象,其余的对象都是 window 的子对象</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="BOM-1"><a href="#BOM-1" class="headerlink" title="BOM"></a>BOM</h3><ul>
+<li>window 对象</li>
+</ul>
+<blockquote>
+<p>概念:<br>BOM 的核心对象,它是浏览器的一个实例(对象),window 有两个角色,子啊 js 里面访问浏览器的时候它是一个 api 接口,在 ECMAScript 使规范全局对象(Global)</p>
+</blockquote>
+<blockquote>
+<p>注意:<br>所有 js 全局对象 函数 变量都会自动成为 window 的成员(除了 let&#x2F;const)</p>
+</blockquote>
+<ul>
+<li>消息提示框</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输入框</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">prompt</span>(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>定时器</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">windows.<span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;&#125;, interval);</span><br><span class="line">windows.<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;&#125;, timeout);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>确认框</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">windows.<span class="title function_">confirm</span>(<span class="string">&quot;确认要删除吗&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>打开新闻页</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">&quot;https://www.baidu.com&quot;</span>, <span class="string">&quot;_blank&quot;</span>, <span class="string">&quot;width=100,height=100&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>document 对象(文档对象)</p>
+</li>
+<li><p>location 对象(浏览器当前的 URL 对象)</p>
+</li>
+</ul>
+<blockquote>
+<p>概念:<br>获取当前浏览器请求网址消息,控制&#x2F;获取请求地址的消息</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// window子对象</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重定向到新页面(没有历史记录，不能回退到上一页,一打开就重定向，如果不是立刻跳转，才会出现历史记录)</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  location.<span class="property">href</span> = <span class="string">&quot;https://www.baidu.com&quot;</span>;</span><br><span class="line">&#125;, <span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// url 统一资源定位器</span></span><br><span class="line"><span class="comment">// 返回 url 的端口</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">port</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回 url 的完整信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">origin</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回http协议</span></span><br><span class="line"><span class="comment">// HTTP协议是用于从服务器传输文本到本地浏览器的传输协议</span></span><br><span class="line"><span class="comment">// http / https</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">protocol</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回 hash 哈希值</span></span><br><span class="line"><span class="comment">// 返回url后面携带 # 的字符串，哈希值的修改不会引起页面的属性</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;location.hash&quot;</span>, location.<span class="property">hash</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回域名和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">host</span>);</span><br><span class="line"><span class="comment">// 返回域名(在http：//域名:端口号)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">hostname</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回目录和文件名 (端口之后为目录和文件名)</span></span><br><span class="line"><span class="comment">// /location.html</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">pathname</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取url ‘？’ 后面的参数值</span></span><br><span class="line"><span class="comment">// http://127.0.0.1:3886/location.html?name=hy#login</span></span><br><span class="line"><span class="comment">// ?name=hy</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>navigator 对象(浏览器本身信息)</li>
+</ul>
+<blockquote>
+<p>概念:<br>返回浏览器的信息,包括浏览器语言&#x2F;系统类型&#x2F;版本等等</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 操作系统的类型 Win32</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">platform</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的名称</span></span><br><span class="line"><span class="comment">// 出于兼容问题，所有现代浏览器都会返回 Netscape</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">appName</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的语言</span></span><br><span class="line"><span class="comment">// zh-CH 代表的是语言文化代码和国家地区</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">language</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的版本 （可能被启用）</span></span><br><span class="line"><span class="comment">//5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">appVersion</span>);</span><br><span class="line"><span class="comment">// alert(navigator.appVersion);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的信息（版本、设备、内核）</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>screen 对象(浏览器屏幕消息)</li>
+</ul>
+<blockquote>
+<p>注意:<br>浏览器的屏幕和系统任务栏有关</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 返回屏幕的有效高度(不包括系统的任务栏)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">availHeight</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回屏幕的有效宽度(不包括系统的任务栏)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">availWidth</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回屏幕的高度</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">height</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回屏幕的宽度</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">width</span>);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>history 对象(浏览器历史记录)</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查询历史记录（网址数量）</span></span><br><span class="line"><span class="comment">// IE、Opena 记录从0开始，其他浏览器默认从1开始</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(history.<span class="property">length</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载前一个历史记录</span></span><br><span class="line">history.<span class="title function_">back</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载后一个历史记录（返回下一页）</span></span><br><span class="line">history.<span class="title function_">go</span>(number);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载前进页历史记录（指定页数/数量）</span></span><br><span class="line"><span class="comment">// number 为正数，前进一页（下一页），负数，后退一页（上一页）</span></span><br><span class="line">history.<span class="title function_">forward</span>();</span><br></pre></td></tr></table></figure>
+
+<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><h4 id="offset-系列"><a href="#offset-系列" class="headerlink" title="offset 系列"></a>offset 系列</h4><blockquote>
+<p>offset 偏移,包括这个元素在文档中所占用位置(可视&#x2F;显示)的大小</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">只读属性,不可修改</span><br><span class="line"></span><br><span class="line">1. offsetWidth</span><br><span class="line">   当前元素的实际宽度 = 左右 padding + width + 左右 border</span><br><span class="line"></span><br><span class="line">2. offsetHeight</span><br><span class="line">   当前元素的实际高度 = 上下 padding + width + 上下 border</span><br><span class="line"></span><br><span class="line">3. offsetParent</span><br><span class="line">   当前元素的父元素(position 不为 static),如果所有的元素都没有设置定位,默认根据根元素(html)定位,参照元素为 body</span><br><span class="line"></span><br><span class="line">4. offsetTop</span><br><span class="line">   当前元素距离(offsetParent 父元素)顶部的偏移值 = (offsetParent 元素的 paddingTop + 其他中间元素 offsetHeight + marginTop)</span><br><span class="line"></span><br><span class="line">5. offsetLeft</span><br><span class="line">   当前元素距离(offsetParent 父元素)左边的偏移值 = (offsetParent 元素的 paddingLeft + 其他中间元素 offsetWidth + marginLeft)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="client-系列"><a href="#client-系列" class="headerlink" title="client 系列"></a>client 系列</h4><blockquote>
+<p>指元素本身的可视内容,不包括(border、滚动条、超出内容被隐藏部分)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. clientWidth</span><br><span class="line">   当前元素的可视宽度 = (width + 左右 padding)</span><br><span class="line"></span><br><span class="line">2. clientHeight</span><br><span class="line">   当前元素的可视高度 = (height + 上下 padding)</span><br><span class="line"></span><br><span class="line">3. clientTop</span><br><span class="line">   当前元素的上边框 = (上 border)</span><br><span class="line"></span><br><span class="line">4. clientLeft</span><br><span class="line">   当前元素的左边框 = (左 border)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="scroll-系列"><a href="#scroll-系列" class="headerlink" title="scroll 系列"></a>scroll 系列</h4><blockquote>
+<p>指元素滚动,包括这个元素没显示出来的实际宽度和高度,包括 padding, 不包括(border、滚动条)</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. scrollWidth</span><br><span class="line">   当前元素的滚动区域宽度(相当于 slientWidth)</span><br><span class="line">   width(内容实际宽度) + 左右 padding</span><br><span class="line"></span><br><span class="line">2. scrollHeight</span><br><span class="line">   当前元素的滚动区域高度(相当于 slientHeight)</span><br><span class="line">   width(内容实际高度) + 上下 padding</span><br><span class="line"></span><br><span class="line">3. scrollTop</span><br><span class="line">   当前元素向上卷出的内容高度(当前元素最顶端和可视区域最顶端之间的距离)</span><br><span class="line">   简单理解:被隐藏的距离(内容上部分的内容)</span><br><span class="line"></span><br><span class="line">4. scrollLeft</span><br><span class="line">   当前元素向左卷出的内容宽度(当前元素最左端和可视区域最左端之间的距离)</span><br><span class="line">   简单理解:被隐藏的距离(内容左部分的内容)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+        <category>4.BOM</category>
+      </categories>
+      <tags>
+        <tag>BOM</tag>
+        <tag>javascript</tag>
+        <tag>浏览器</tag>
+      </tags>
   </entry>
   <entry>
     <title>DOM</title>
@@ -190,105 +284,6 @@
         <tag>前端</tag>
         <tag>DOM</tag>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BOM</title>
-    <url>/blog/posts/4090752603/</url>
-    <content><![CDATA[<h2 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h2><blockquote>
-<p>浏览器对象模型 Browser Object Model, 流浪其对象模型提供独立的 API,可以和浏览器窗口进行交互,BOM 由多个对象组成,其中 window 对象就是 BOM 的顶层对象,其余的对象都是 window 的子对象</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="BOM-1"><a href="#BOM-1" class="headerlink" title="BOM"></a>BOM</h3><ul>
-<li>window 对象</li>
-</ul>
-<blockquote>
-<p>概念:<br>BOM 的核心对象,它是浏览器的一个实例(对象),window 有两个角色,子啊 js 里面访问浏览器的时候它是一个 api 接口,在 ECMAScript 使规范全局对象(Global)</p>
-</blockquote>
-<blockquote>
-<p>注意:<br>所有 js 全局对象 函数 变量都会自动成为 window 的成员(除了 let&#x2F;const)</p>
-</blockquote>
-<ul>
-<li>消息提示框</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">alert</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">alert</span>(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>输入框</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="title function_">prompt</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">prompt</span>(<span class="string">&quot;&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>定时器</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">windows.<span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;&#125;, interval);</span><br><span class="line">windows.<span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;&#125;, timeout);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>确认框</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">windows.<span class="title function_">confirm</span>(<span class="string">&quot;确认要删除吗&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>打开新闻页</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="variable language_">window</span>.<span class="title function_">open</span>(<span class="string">&quot;https://www.baidu.com&quot;</span>, <span class="string">&quot;_blank&quot;</span>, <span class="string">&quot;width=100,height=100&quot;</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>document 对象(文档对象)</p>
-</li>
-<li><p>location 对象(浏览器当前的 URL 对象)</p>
-</li>
-</ul>
-<blockquote>
-<p>概念:<br>获取当前浏览器请求网址消息,控制&#x2F;获取请求地址的消息</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// window子对象</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">window</span>.<span class="property">location</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 重定向到新页面(没有历史记录，不能回退到上一页,一打开就重定向，如果不是立刻跳转，才会出现历史记录)</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">  location.<span class="property">href</span> = <span class="string">&quot;https://www.baidu.com&quot;</span>;</span><br><span class="line">&#125;, <span class="number">3000</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// url 统一资源定位器</span></span><br><span class="line"><span class="comment">// 返回 url 的端口</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">port</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回 url 的完整信息</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">origin</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回http协议</span></span><br><span class="line"><span class="comment">// HTTP协议是用于从服务器传输文本到本地浏览器的传输协议</span></span><br><span class="line"><span class="comment">// http / https</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">protocol</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回 hash 哈希值</span></span><br><span class="line"><span class="comment">// 返回url后面携带 # 的字符串，哈希值的修改不会引起页面的属性</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;location.hash&quot;</span>, location.<span class="property">hash</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回域名和端口号</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">host</span>);</span><br><span class="line"><span class="comment">// 返回域名(在http：//域名:端口号)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">hostname</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回目录和文件名 (端口之后为目录和文件名)</span></span><br><span class="line"><span class="comment">// /location.html</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">pathname</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取url ‘？’ 后面的参数值</span></span><br><span class="line"><span class="comment">// http://127.0.0.1:3886/location.html?name=hy#login</span></span><br><span class="line"><span class="comment">// ?name=hy</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(location.<span class="property">search</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>navigator 对象(浏览器本身信息)</li>
-</ul>
-<blockquote>
-<p>概念:<br>返回浏览器的信息,包括浏览器语言&#x2F;系统类型&#x2F;版本等等</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 操作系统的类型 Win32</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">platform</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的名称</span></span><br><span class="line"><span class="comment">// 出于兼容问题，所有现代浏览器都会返回 Netscape</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">appName</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的语言</span></span><br><span class="line"><span class="comment">// zh-CH 代表的是语言文化代码和国家地区</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">language</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的版本 （可能被启用）</span></span><br><span class="line"><span class="comment">//5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">appVersion</span>);</span><br><span class="line"><span class="comment">// alert(navigator.appVersion);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 浏览器的信息（版本、设备、内核）</span></span><br><span class="line"><span class="comment">// Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(navigator.<span class="property">userAgent</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>screen 对象(浏览器屏幕消息)</li>
-</ul>
-<blockquote>
-<p>注意:<br>浏览器的屏幕和系统任务栏有关</p>
-</blockquote>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 返回屏幕的有效高度(不包括系统的任务栏)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">availHeight</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回屏幕的有效宽度(不包括系统的任务栏)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">availWidth</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回屏幕的高度</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">height</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回屏幕的宽度</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(screen.<span class="property">width</span>);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>history 对象(浏览器历史记录)</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 查询历史记录（网址数量）</span></span><br><span class="line"><span class="comment">// IE、Opena 记录从0开始，其他浏览器默认从1开始</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(history.<span class="property">length</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载前一个历史记录</span></span><br><span class="line">history.<span class="title function_">back</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//加载后一个历史记录（返回下一页）</span></span><br><span class="line">history.<span class="title function_">go</span>(number);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加载前进页历史记录（指定页数/数量）</span></span><br><span class="line"><span class="comment">// number 为正数，前进一页（下一页），负数，后退一页（上一页）</span></span><br><span class="line">history.<span class="title function_">forward</span>();</span><br></pre></td></tr></table></figure>
-
-<h3 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h3><h4 id="offset-系列"><a href="#offset-系列" class="headerlink" title="offset 系列"></a>offset 系列</h4><blockquote>
-<p>offset 偏移,包括这个元素在文档中所占用位置(可视&#x2F;显示)的大小</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">只读属性,不可修改</span><br><span class="line"></span><br><span class="line">1. offsetWidth</span><br><span class="line">   当前元素的实际宽度 = 左右 padding + width + 左右 border</span><br><span class="line"></span><br><span class="line">2. offsetHeight</span><br><span class="line">   当前元素的实际高度 = 上下 padding + width + 上下 border</span><br><span class="line"></span><br><span class="line">3. offsetParent</span><br><span class="line">   当前元素的父元素(position 不为 static),如果所有的元素都没有设置定位,默认根据根元素(html)定位,参照元素为 body</span><br><span class="line"></span><br><span class="line">4. offsetTop</span><br><span class="line">   当前元素距离(offsetParent 父元素)顶部的偏移值 = (offsetParent 元素的 paddingTop + 其他中间元素 offsetHeight + marginTop)</span><br><span class="line"></span><br><span class="line">5. offsetLeft</span><br><span class="line">   当前元素距离(offsetParent 父元素)左边的偏移值 = (offsetParent 元素的 paddingLeft + 其他中间元素 offsetWidth + marginLeft)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="client-系列"><a href="#client-系列" class="headerlink" title="client 系列"></a>client 系列</h4><blockquote>
-<p>指元素本身的可视内容,不包括(border、滚动条、超出内容被隐藏部分)</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. clientWidth</span><br><span class="line">   当前元素的可视宽度 = (width + 左右 padding)</span><br><span class="line"></span><br><span class="line">2. clientHeight</span><br><span class="line">   当前元素的可视高度 = (height + 上下 padding)</span><br><span class="line"></span><br><span class="line">3. clientTop</span><br><span class="line">   当前元素的上边框 = (上 border)</span><br><span class="line"></span><br><span class="line">4. clientLeft</span><br><span class="line">   当前元素的左边框 = (左 border)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h4 id="scroll-系列"><a href="#scroll-系列" class="headerlink" title="scroll 系列"></a>scroll 系列</h4><blockquote>
-<p>指元素滚动,包括这个元素没显示出来的实际宽度和高度,包括 padding, 不包括(border、滚动条)</p>
-</blockquote>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">1. scrollWidth</span><br><span class="line">   当前元素的滚动区域宽度(相当于 slientWidth)</span><br><span class="line">   width(内容实际宽度) + 左右 padding</span><br><span class="line"></span><br><span class="line">2. scrollHeight</span><br><span class="line">   当前元素的滚动区域高度(相当于 slientHeight)</span><br><span class="line">   width(内容实际高度) + 上下 padding</span><br><span class="line"></span><br><span class="line">3. scrollTop</span><br><span class="line">   当前元素向上卷出的内容高度(当前元素最顶端和可视区域最顶端之间的距离)</span><br><span class="line">   简单理解:被隐藏的距离(内容上部分的内容)</span><br><span class="line"></span><br><span class="line">4. scrollLeft</span><br><span class="line">   当前元素向左卷出的内容宽度(当前元素最左端和可视区域最左端之间的距离)</span><br><span class="line">   简单理解:被隐藏的距离(内容左部分的内容)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-        <category>4.BOM</category>
-      </categories>
-      <tags>
-        <tag>BOM</tag>
-        <tag>javascript</tag>
-        <tag>浏览器</tag>
       </tags>
   </entry>
 </search>
