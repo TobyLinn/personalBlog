@@ -125,7 +125,7 @@
 <li><p>outerText 设置或获取位于元素以及元素开始和结束标签内容的 <code>文本</code> 形式 (当前元素 + 元素内文本内容, 不包含元素 &#x2F; 注释节点)</p>
 </li>
 </ul>
-<p><img data-src="/blog/./img/image.png" alt="Alt text"></p>
+<p><img src="/blog/./img/image.png" alt="Alt text"></p>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><blockquote>
 <p>事件是 js 和 DOM 的交互桥梁(对事件做出反应),事件通常是和函数结合使用,通过用户操作行为(点击&#x2F;手指触摸&#x2F;鼠标)事件来驱动函数的执行(回调函数)</p>
 </blockquote>
